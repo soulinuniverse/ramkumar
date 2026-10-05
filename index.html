@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ram Kumar — full-stack developer and founder</title>
-<meta name="description" content="Founder and operator building software that makes India self-reliant. Interface, API, database and the infrastructure that keeps it running.">
+<title>Ram Kumar · Founder, Cinema Perfumes</title>
+<meta name="description" content="Ram Kumar, Mumbai. Fifteen years in film, music rights and archives. Founder of Cinema Perfumes, a fragrance house for the people who make films.">
 <meta name="author" content="Ram Kumar">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ram Kumar — full-stack developer and founder">
-<meta property="og:description" content="Founder and operator building software that makes India self-reliant.">
+<meta property="og:title" content="Ram Kumar · Founder, Cinema Perfumes">
+<meta property="og:description" content="Fifteen years behind the work. Founder of Cinema Perfumes.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 fill=%22%23080D0F%22/><circle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%23F2860D%22/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -429,6 +429,14 @@ section{padding:clamp(64px,11vh,124px) 0;border-top:1px solid var(--rule)}
   font-size:1.12rem;letter-spacing:.06em;color:var(--ink-3);
   display:inline-block;text-transform:none;
 }
+.lede,.prose,.pdesc,.step-note,.cell p{text-wrap:pretty}
+.slots.one{grid-template-columns:minmax(0,1fr)}
+.slots.one .slot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(28px,5vw,64px);align-content:start}
+.slots.one .slot>.num,.slots.one .slot>.pname,.slots.one .slot>.pdesc{grid-column:1}
+.slots.one .slot>.pmeta{grid-column:2;grid-row:1 / span 3;margin:0;padding-top:0;border-top:0;align-self:center}
+@media(max-width:820px){.slots.one .slot{display:flex}.slots.one .slot>.pmeta{padding-top:16px;border-top:1px solid var(--rule-soft)}}
+.fl{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+.fl:hover{color:var(--signal);border-bottom-color:var(--signal)}
 .pmeta{margin:auto 0 0;padding-top:16px;border-top:1px solid var(--rule-soft);display:grid;gap:9px}
 .pmeta > div{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
 .pmeta dt{margin:0;font-family:var(--f-mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
@@ -706,14 +714,14 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
     <div class="shell bar-in">
       <a class="brand" href="#top"><span class="dot" aria-hidden="true"></span>RAM&nbsp;KUMAR</a>
       <div class="ws" id="ws" aria-label="Workspaces">
-        <button type="button" data-go="build"   title="What I build">1</button>
-        <button type="button" data-go="work"    title="Work">2</button>
-        <button type="button" data-go="process" title="Process">3</button>
-        <button type="button" data-go="stack"   title="Stack">4</button>
+        <button type="button" data-go="build"   title="What I've done">1</button>
+        <button type="button" data-go="work"    title="Cinema Perfumes">2</button>
+        <button type="button" data-go="process" title="How I work">3</button>
+        <button type="button" data-go="stack"   title="What I use">4</button>
         <button type="button" data-go="contact" title="Contact">5</button>
       </div>
-      <div class="bar-clock"><i>up</i> <span id="barUp">00:00:00</span> <i>·</i> <span id="barClock">--:--</span> <i>·</i> <button type="button" class="hz" id="hzBtn" aria-expanded="false" aria-controls="hzPanel"><i>horizon</i> <span id="barHorizon">2047</span></button></div>
-      <a class="btn" href="#contact">Start a build</a>
+      <div class="bar-clock"><span>Mumbai</span> <i>·</i> <span>Founder, Cinema Perfumes</span></div>
+      <a class="btn" href="#contact">Contact</a>
     </div>
   </header>
 
@@ -723,21 +731,20 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
     <div class="shell hero">
       <div class="hero-grid">
         <div>
-          <p class="mono eyebrow"><b>●&nbsp;Available</b> Full-stack developer &nbsp;/&nbsp; Founder</p>
+          <p class="mono eyebrow"><b>●&nbsp;Mumbai</b> Fifteen years in film</p>
           <p class="greeting"><span class="word" id="greetWord">नमस्ते</span><span class="lang" id="greetLang">Hindi</span></p>
           <h1>
-            <span class="line">I build software</span>
-            <span class="line">that makes India</span>
-            <span class="line"><span class="scramble" data-word="self-reliant">self-reliant</span></span>
+            <span class="line">Hi, I&rsquo;m Ram.</span>
+            <span class="line">Fifteen years</span>
+            <span class="line">behind the work.</span>
           </h1>
           <p class="lede" style="margin-top:28px">
-            Products designed and shipped end to end. Interface, API, database,
-            infrastructure, and the automation that keeps it running. Built for
-            people who use them daily, not for a demo.
+            On film sets, in edit rooms, and lately in music rights and archives.
+            Mostly making sure the people who made something get named for it.
           </p>
           <div class="hero-actions">
-            <a class="btn primary" href="#work">See the work</a>
-            <a class="btn" href="#contact">Talk about a build</a>
+            <a class="btn primary" href="#build">See the work</a>
+            <a class="btn" href="#work">Cinema Perfumes</a>
           </div>
         </div>
 
@@ -745,7 +752,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
 
       <!-- neofetch-style identity card -->
       <div class="fetch">
-        <div class="term-bar"><i></i><i></i><i></i><em>ram@bharat&nbsp;:&nbsp;~&nbsp;$&nbsp;whoami</em></div>
+        <div class="term-bar"><i></i><i></i><i></i><em>ram@mumbai&nbsp;:&nbsp;~&nbsp;$&nbsp;whoami</em></div>
         <div class="fetch-body">
           <div class="ascii-col"><div class="ascii-wrap" aria-hidden="true">
             <pre class="ascii ascii-base" id="ascii"></pre>
@@ -760,7 +767,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
           <div class="fetch-rows" id="fetch"></div>
         </div>
         <div class="fetch-foot">
-          <span>Rendered client-side · no tracking</span>
+          <span>No tracking</span>
           <span id="uptimeclock">--</span>
         </div>
       </div>
@@ -776,53 +783,51 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
       <div class="shell">
         <div class="pane" data-pane="01">
           <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
-          <span class="pane-label"><b>01</b>capability</span>
-          <span class="pane-tag">5 modules · 1 operator</span>
+          <span class="pane-label"><b>01</b>what i&rsquo;ve done</span>
+          <span class="pane-tag">5 strands &middot; 15 years</span>
         <div class="sec-head">
           <div>
-            <p class="mono eyebrow"><b>Capability</b></p>
-            <h2>The whole stack,<br>one pair of hands</h2>
+            <p class="mono eyebrow"><b>What I&rsquo;ve done</b></p>
+            <h2>Fifteen years,<br>mostly behind the camera.</h2>
           </div>
           <p class="prose">
-            Most builds die in the handover between people. Nothing here is handed over.
-            The spec, the schema, the interface, the deployment and the on-call are the
-            same person, so the thing that ships is the thing that was designed.
+            I have led design teams, edited features, shot campaigns, and filed the
+            paperwork that makes sure a lyricist gets paid. Different jobs, same
+            instinct. Get the work right, and get the right names on it.
           </p>
         </div>
 
         <div class="bento">
           <div class="cell rv">
-            <span class="idx">FE</span>
-            <h3>Interfaces</h3>
-            <p>Fast, accessible frontends. Responsive down to a ₹6,000 Android on a weak network, not just a MacBook.</p>
-            <div class="tags"><span class="tag">React</span><span class="tag">Astro</span><span class="tag">CSS</span></div>
+            <span class="idx">FILM</span>
+            <h3>Feature films</h3>
+            <p>Creative director on Nastik, leading the design team on a crew of 150+. Editor on Sweeper, Dust to Dream and Veerangana.</p>
+            <div class="tags"><span class="tag">Nastik</span><span class="tag">Sweeper</span><span class="tag">Dust to Dream</span><span class="tag">Veerangana</span></div>
           </div>
           <div class="cell rv">
-            <span class="idx">BE</span>
-            <h3>APIs &amp; services</h3>
-            <p>Typed endpoints, auth, payments, webhooks, background jobs. Documented enough that a stranger could extend them.</p>
-            <div class="tags"><span class="tag">Node</span><span class="tag">Python</span><span class="tag">REST</span></div>
+            <span class="idx">IPRS</span>
+            <h3>Music rights</h3>
+            <p>More than 100 songs filed with IPRS, with royalty splits worked out between composers, lyricists and singers.</p>
+            <div class="tags"><span class="tag">100+ songs</span><span class="tag">IPRS</span></div>
           </div>
           <div class="cell rv">
-            <span class="idx">DB</span>
-            <h3>Data</h3>
-            <p>Schemas that survive contact with real usage. Migrations, indexes, backups, and reporting that finance can read.</p>
-            <div class="tags"><span class="tag">Postgres</span><span class="tag">SQLite</span><span class="tag">D1</span></div>
+            <span class="idx">ADS</span>
+            <h3>Brands</h3>
+            <p>Films for Hindustan Unilever, Reliance Entertainment, Greenpeace India and Save the Ganga.</p>
           </div>
           <div class="cell wide rv">
-            <span class="idx">OPS</span>
-            <h3>Infrastructure that costs almost nothing</h3>
-            <p>Edge hosting, CI, observability and domains configured so a product can run at low volume for near zero, and scale without a rebuild.</p>
-            <div class="tags"><span class="tag">Cloudflare</span><span class="tag">Docker</span><span class="tag">CI/CD</span></div>
+            <span class="idx">ARCH</span>
+            <h3>Archive</h3>
+            <p>These days I look after a media archive. It teaches you one thing fast. If nobody writes the name down, it is gone.</p>
           </div>
           <div class="cell wide rv">
-            <span class="idx">AUTO</span>
-            <h3>Automation &amp; AI where it earns its place</h3>
-            <p>WhatsApp and messaging flows, internal tooling, and LLM steps used for the parts humans genuinely should not be doing.</p>
-            <div class="tags"><span class="tag">WhatsApp API</span><span class="tag">Workflows</span><span class="tag">LLM</span></div>
+            <span class="idx">AWARD</span>
+            <h3>Recognition</h3>
+            <p>DoP on a Karnataka Tourism documentary previewed at the Delhi International Film Festival. Editor on Situation, first prize at the Indo-Canadian Film Festival.</p>
+            <div class="tags"><span class="tag">Delhi International Film Festival</span><span class="tag">Indo-Canadian Film Festival</span></div>
           </div>
         </div>
-          <div class="pane-foot"><span>load 0.00 · nominal</span><span>pane <b>01</b> / 05</span></div>
+          <div class="pane-foot"><span>names on the work</span><span>pane <b>01</b> / 05</span></div>
         </div>
       </div>
     </section>
@@ -831,9 +836,8 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
     <div class="creed-wrap">
       <div class="shell">
         <blockquote class="creed rv">
-          <p>Anyone can build an app. Most are gone in three years.</p>
+          <p>Anyone can make a product. Most are gone in three years.</p>
           <p class="turn">The ones that stay solved something that still hurts when you take them away.</p>
-          <p class="test">Not <b>&ldquo;what can I build&rdquo;</b>. <b>&ldquo;What breaks if this disappears?&rdquo;</b></p>
         </blockquote>
       </div>
     </div>
@@ -843,41 +847,34 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
       <div class="shell">
         <div class="pane" data-pane="02">
           <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
-          <span class="pane-label"><b>02</b>what i&rsquo;m building</span>
-          <span class="pane-tag">2 products · in build</span>
+          <span class="pane-label"><b>02</b>cinema perfumes</span>
+          <span class="pane-tag">launching soon</span>
         <div class="sec-head">
           <div>
-            <p class="mono eyebrow"><b>What I&rsquo;m building</b></p>
-            <h2>Two products,<br>one still sealed</h2>
+            <p class="mono eyebrow"><b>Cinema Perfumes</b></p>
+            <h2>One idea,<br>built properly.</h2>
           </div>
           <p class="prose">
-            Two products in build. One I can name. One I cannot name yet, so the
-            name is the only part held back and everything else is on the record.
+            A fragrance house for the people who make films. Distilled in Kannauj,
+            in the copper stills India has run for centuries and rarely gets credit
+            for. Opening first to the film fraternity.
           </p>
         </div>
-        <div class="slots">
+        <div class="slots one">
           <article class="slot rv">
-            <span class="num">W / 01</span>
-            <h3 class="pname">Native India</h3>
-            <p class="pdesc">A social product built in India, for India.</p>
+            <span class="num">C / 01</span>
+            <h3 class="pname">Cinema Perfumes</h3>
+            <p class="pdesc">Every film gets a composer. No film has ever had a perfumer. We give a film its second score, one you wear.</p>
             <dl class="pmeta">
-              <div><dt>Status</dt><dd>In development</dd></div>
-            </dl>
-          </article>
-          <article class="slot rv">
-            <span class="num">W / 02</span>
-            <h3 class="pname"><span class="seal" id="sealName" aria-label="Name withheld until launch">&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;</span></h3>
-            <p class="pdesc">
-              Payment infrastructure for an Indian industry that runs on cash
-              advances and settlements measured in months.
-            </p>
-            <dl class="pmeta">
-              <div><dt>Status</dt><dd>Launching this year</dd></div>
-              <div><dt>Name</dt><dd>Withheld until launch</dd></div>
+              <div><dt>Company</dt><dd>Born For Cinema OPC Pvt Ltd</dd></div>
+              <div><dt>Recognition</dt><dd>DPIIT-recognised startup</dd></div>
+              <div><dt>Distilled in</dt><dd>Kannauj</dd></div>
+              <div><dt>Opening to</dt><dd>The film fraternity</dd></div>
+              <div><dt>Status</dt><dd>Launching soon</dd></div>
             </dl>
           </article>
         </div>
-          <div class="pane-foot"><span>build in progress</span><span>pane <b>02</b> / 05</span></div>
+          <div class="pane-foot"><span>second score</span><span>pane <b>02</b> / 05</span></div>
         </div>
       </div>
     </section>
@@ -887,25 +884,21 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
       <div class="shell">
         <div class="pane" data-pane="03">
           <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
-          <span class="pane-label"><b>03</b>how it runs</span>
-          <span class="pane-tag">4 stages · sequential</span>
+          <span class="pane-label"><b>03</b>how i work</span>
+          <span class="pane-tag">4 steps</span>
         <div class="sec-head">
           <div>
-            <p class="mono eyebrow"><b>How it runs</b></p>
-            <h2>Spec first,<br>then code</h2>
+            <p class="mono eyebrow"><b>How I work</b></p>
+            <h2>Read the brief,<br>then make it real.</h2>
           </div>
-          <p class="prose">
-            A written spec is cheaper than a rewrite. Every build starts as a document
-            you can argue with before a single line is committed.
-          </p>
         </div>
         <div class="steps">
-          <div class="step rv"><span class="n">01</span><h3>Define the problem in writing</h3><p class="step-note">Who it is for, what breaks today, what "done" measurably means.</p></div>
-          <div class="step rv"><span class="n">02</span><h3>Spec the system</h3><p class="step-note">Data model, screens, edge cases and the things deliberately left out of v1.</p></div>
-          <div class="step rv"><span class="n">03</span><h3>Build the thin slice</h3><p class="step-note">One real end-to-end path in production early, so assumptions fail cheap.</p></div>
-          <div class="step rv"><span class="n">04</span><h3>Harden and hand over</h3><p class="step-note">Tests, monitoring, docs, access. You own the accounts, the code and the data.</p></div>
+          <div class="step rv"><span class="n">01</span><h3>Read the brief.</h3><p class="step-note">Who it is for, and what is missing.</p></div>
+          <div class="step rv"><span class="n">02</span><h3>Find the feeling.</h3><p class="step-note">The mood, the place, the one thing to remember.</p></div>
+          <div class="step rv"><span class="n">03</span><h3>Make it real.</h3><p class="step-note">Something a person can hold, wear or watch.</p></div>
+          <div class="step rv"><span class="n">04</span><h3>Show it, then fix.</h3><p class="step-note">Keep what lands, fix what doesn&rsquo;t.</p></div>
         </div>
-          <div class="pane-foot"><span>spec &rarr; ship</span><span>pane <b>03</b> / 05</span></div>
+          <div class="pane-foot"><span>brief &rarr; made</span><span>pane <b>03</b> / 05</span></div>
         </div>
       </div>
     </section>
@@ -915,21 +908,17 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
       <div class="shell">
         <div class="pane" data-pane="04">
           <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
-          <span class="pane-label"><b>04</b>toolkit</span>
-          <span class="pane-tag">22 tools · open source first</span>
+          <span class="pane-label"><b>04</b>what i use</span>
+          <span class="pane-tag">9 tools</span>
         <div class="sec-head">
           <div>
-            <p class="mono eyebrow"><b>Toolkit</b></p>
-            <h2>Boring tools,<br>chosen on purpose</h2>
+            <p class="mono eyebrow"><b>What I use</b></p>
+            <h2>What I use</h2>
           </div>
-          <p class="prose">
-            Preference for open source and for things that still run in five years without
-            a licence renewal. Swap any of these for what your team already knows.
-          </p>
         </div>
         <div class="stack" id="chips"></div>
-        <div class="meters" id="meters"></div>
-          <div class="pane-foot"><span>no licence renewals</span><span>pane <b>04</b> / 05</span></div>
+        
+          <div class="pane-foot"><span>tools of the trade</span><span>pane <b>04</b> / 05</span></div>
         </div>
       </div>
     </section>
@@ -940,46 +929,35 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
         <div class="pane" data-pane="05">
           <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
           <span class="pane-label"><b>05</b>contact</span>
-          <span class="pane-tag">response &le; 24h</span>
+          <span class="pane-tag">reply within a day</span>
         <div class="cta">
         <div>
           <p class="mono eyebrow"><b>Contact</b></p>
-          <h2>Have something<br>worth building?</h2>
+          <h2>Want to talk?</h2>
           <p class="prose" style="margin-top:20px">
-            Send the problem, not the solution. If it is a fit you get a written scope
-            and a fixed first milestone. If it is not, you get an honest no and a pointer
-            to someone better placed.
+            Email is best. I usually reply within a day.
           </p>
           <div class="hero-actions">
-            <a class="btn primary" href="#">Email me</a>
-            <a class="btn" href="#">WhatsApp</a>
+            <a class="btn primary" href="mailto:startupbharatnow@gmail.com">Email me</a>
+            <a class="btn" href="https://www.linkedin.com/in/universe9" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
         <div class="cta-card">
-          <div class="cta-row"><span>Response</span><span>Within 24 hours</span></div>
-          <div class="cta-row"><span>Engagements</span><span>Build · Advisory · Fractional</span></div>
-          <div class="cta-row"><span>Ownership</span><span>Client keeps code &amp; accounts</span></div>
-          <div class="cta-row"><span>Status</span><span style="color:var(--signal)">Taking work</span></div>
+          <div class="cta-row"><span>Email</span><span>startupbharatnow@gmail.com</span></div>
+          <div class="cta-row"><span>LinkedIn</span><span>in/universe9</span></div>
+          <div class="cta-row"><span>Based</span><span>Mumbai, India</span></div>
+          <div class="cta-row"><span>Reply</span><span>Within a day</span></div>
         </div>
         </div>
-          <div class="pane-foot"><span>status · taking work</span><span>pane <b>05</b> / 05</span></div>
+          <div class="pane-foot"><span>say hello</span><span>pane <b>05</b> / 05</span></div>
         </div>
       </div>
     </section>
   </main>
 
-  <div class="hz-panel" id="hzPanel" role="dialog" aria-label="Horizon" hidden>
-    <div class="hz-head"><span>$ cat horizon</span><button type="button" class="hz-x" id="hzClose">esc</button></div>
-    <div class="hz-body">
-      <p class="hz-l first"><b id="hzCount">&mdash;</b> mornings from today.</p>
-      <p class="hz-l">A child born this morning turns twenty one that year.</p>
-      <p class="hz-l">Whatever gets built between now and then is what they inherit.</p>
-    </div>
-  </div>
-
   <div class="statusline" role="contentinfo">
     <span class="seg mode">NORMAL</span>
-    <span class="seg hide-s">ram-kumar.dev</span>
+    <span class="seg hide-s">mumbai</span>
     <span class="seg grow">theme: <span id="slTheme">atelier</span></span>
     <span class="seg hide-s">utf-8</span>
     <span class="seg hide-s"><span id="slPct">0</span>%</span>
@@ -1002,21 +980,18 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
   document.getElementById("yr").textContent = new Date().getFullYear();
 
   /* ---- ticker ---- */
-  var items = ["Full-stack engineering","<b>Made in India</b>","Spec-driven delivery",
-    "Edge-first infrastructure","<b>Open source by default</b>","Automation &amp; AI",
-    "Accessible interfaces","<b>Client owns everything</b>"];
+  var items = ["Fifteen years in film","<b>Cinema Perfumes</b>","100+ songs filed with IPRS",
+    "Distilled in Kannauj","<b>Credit where it is due</b>","Crew of 150+",
+    "DPIIT-recognised startup","<b>Built in India</b>"];
   var track = document.getElementById("tick");
   var row = items.map(function(t){return "<span>"+t+"</span>";}).join("");
   track.innerHTML = row + row;
 
   /* ---- stack chips, and the meters that count them ---- */
   var GROUPS = {
-    "languages": ["TypeScript","JavaScript","Python","SQL"],
-    "frontend":  ["React","Astro","Tailwind","CSS"],
-    "backend":   ["Node.js","REST","WebSockets","Stripe","Razorpay"],
-    "data":      ["PostgreSQL","SQLite","Redis"],
-    "infra":     ["Cloudflare Workers","Docker","Linux","Git","GitHub Actions"],
-    "tooling":   ["Figma","Playwright","WhatsApp Cloud API"]
+    "edit":       ["DaVinci Resolve","Final Cut Pro","Adobe"],
+    "assistants": ["Claude","ChatGPT","Codex"],
+    "generative": ["Kling","Runway","Midjourney"]
   };
   var tools = [];
   for (var gk in GROUPS) tools = tools.concat(GROUPS[gk]);
@@ -1357,15 +1332,15 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
 
   /* ---------- headline rotation, in step with the portrait ---------- */
   var VOICES = [
-    {eye:"Full-stack developer &nbsp;/&nbsp; Founder",
-     h:["Hi, I&rsquo;m Ram.","I build the","whole thing."],
-     s:"Interface, API, database, infrastructure. One pair of hands, so the thing that ships is the thing that was designed."},
-    {eye:"Building in India &nbsp;/&nbsp; For India",
-     h:["I build","software that","makes India","self-reliant."],
-     s:"Products made here, run here, and owned by the people who paid for them. Not licensed back to them forever."},
-    {eye:"How the work actually runs",
-     h:["Spec first.","Then code."],
-     s:"A written spec is cheaper than a rewrite. Ask anyone who has skipped one. You get a document you can argue with before a line is committed."}
+    {eye:"Fifteen years in film",
+     h:["Hi, I&rsquo;m Ram.","Fifteen years","behind the work."],
+     s:"On film sets, in edit rooms, and lately in music rights and archives. Mostly making sure the people who made something get named for it."},
+    {eye:"Cinema Perfumes",
+     h:["Every film","leaves something","in the air."],
+     s:"Hot lights, sawdust, the first chai at four in the morning. Then the shoot wraps and it&rsquo;s gone. Cinema Perfumes keeps it."},
+    {eye:"The second score",
+     h:["Every film gets","a composer.","No film has ever","had a perfumer."],
+     s:"We give a film its second score, one you wear."}
   ];
   var h1El = document.querySelector(".hero h1");
   var ledeEl = document.querySelector(".hero .lede");
@@ -1374,7 +1349,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
 
   function paintVoice(i, scrambleFor){
     var v = VOICES[i];
-    if (eyeEl) eyeEl.innerHTML = '<b>&#9679;&nbsp;Available</b> ' + v.eye;
+    if (eyeEl) eyeEl.innerHTML = '<b>&#9679;&nbsp;Mumbai</b> ' + v.eye;
     if (ledeEl) ledeEl.textContent = v.s;
     if (!h1El) return;
     if (!scrambleFor){
@@ -1419,7 +1394,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
       var v = VOICES[i];
       h1El.innerHTML = v.h.map(function(l){ return '<span class="line">'+l+"</span>"; }).join("");
       ledeEl.textContent = v.s;
-      if (eyeEl) eyeEl.innerHTML = '<b>&#9679;&nbsp;Available</b> ' + v.eye;
+      if (eyeEl) eyeEl.innerHTML = '<b>&#9679;&nbsp;Mumbai</b> ' + v.eye;
       mh = Math.max(mh, h1El.getBoundingClientRect().height);
       ml = Math.max(ml, ledeEl.getBoundingClientRect().height);
       if (eyeEl) me = Math.max(me, eyeEl.getBoundingClientRect().height);
@@ -1985,32 +1960,24 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
 
   /* ---- neofetch rows ---- */
   var FETCH = [
-    {g:"system"},
-    {k:"Host",       v:"Independent \u00b7 founder-operator"},
-    {k:"OS",         v:"Linux \u00b7 macOS \u00b7 Android"},
-    {k:"Uptime",     v:"years shipping", ph:true},
-    {k:"Shell",      v:"zsh \u00b7 bash"},
-    {k:"Editor",     v:"VS Code \u00b7 Neovim"},
-    {g:"stack"},
-    {k:"Frontend",   v:"React \u00b7 Astro \u00b7 Tailwind"},
-    {k:"Backend",    v:"Node.js \u00b7 Python \u00b7 REST \u00b7 WebSockets"},
-    {k:"Data",       v:"PostgreSQL \u00b7 SQLite \u00b7 Redis"},
-    {k:"Infra",      v:"Cloudflare Workers \u00b7 Docker \u00b7 CI/CD"},
-    {k:"Automation", v:"WhatsApp Cloud API \u00b7 workflows \u00b7 LLM steps"},
-    {g:"human"},
-    {k:"Languages.Code", v:"TypeScript \u00b7 Python \u00b7 SQL"},
-    {k:"Languages.Real", v:"your languages", ph:true},
-    {k:"Runs on",        v:"your fuel of choice", ph:true},
-    {k:"Based",          v:"India \u00b7 remote worldwide"},
-    {k:"Recognition",    v:"DPIIT-recognised startup"},
-    {k:"Believes",       v:"software should outlive its invoice"},
-    {k:"Mission",        v:"Make India self-reliant, one shipped thing at a time"},
-    {k:"Horizon",        v:'<button type="button" class="hz-link" id="hzBtn2">2047 · centenary of independence</button>'},
+    {g:"who"},
+    {k:"Name",        v:"Ram Kumar"},
+    {k:"Based",       v:"Mumbai, India"},
+    {k:"Believes",    v:"the people behind the work deserve the credit"},
+    {g:"work"},
+    {k:"Role",        v:"Founder, Cinema Perfumes"},
+    {k:"Company",     v:"Born For Cinema OPC Pvt Ltd"},
+    {k:"Recognition", v:"DPIIT-recognised startup"},
+    {g:"record"},
+    {k:"In film",     v:"15 years"},
+    {k:"Biggest crew",v:"150+"},
+    {k:"Music rights",v:"100+ songs filed with IPRS"},
+    {g:"tools"},
+    {k:"Edit",        v:"DaVinci Resolve \u00b7 Final Cut Pro"},
+    {k:"AI",          v:"Claude \u00b7 ChatGPT \u00b7 Codex"},
     {g:"contact"},
-    {k:"Email",     v:"you@domain", ph:true},
-    {k:"GitHub",    v:"github.com/handle", ph:true},
-    {k:"LinkedIn",  v:"in/handle", ph:true},
-    {k:"Status",    v:"<span class=\"live\">\u25cf available for builds</span>"}
+    {k:"Email",       v:'<a class="fl" href="mailto:startupbharatnow@gmail.com">startupbharatnow@gmail.com</a>'},
+    {k:"LinkedIn",    v:'<a class="fl" href="https://www.linkedin.com/in/universe9" target="_blank" rel="noopener">in/universe9</a>'}
   ];
   var fetchEl = document.getElementById("fetch");
   function rowHTML(r){
@@ -2019,7 +1986,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
            '<span class="v'+(r.ph?" ph":"")+'">'+r.v+"</span></div>";
   }
   function paintFetch(n){
-    fetchEl.innerHTML = '<div class="fetch-user">ram<span>@</span>bharat</div><div class="fetch-hr"></div>'+
+    fetchEl.innerHTML = '<div class="fetch-user">ram<span>@</span>mumbai</div><div class="fetch-hr"></div>'+
       FETCH.slice(0, n).map(rowHTML).join("");
   }
   /* Each row lights in turn: a spark runs the dotted leader from the key across
@@ -2142,85 +2109,5 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
 })();
 </script>
 
-<script>
-/* ============ THE SEAL ============
-   Everywhere else on this page a scramble resolves into words. This one never
-   does, and that is the entire message: the name is the only thing held back.
-   Mono and fixed width, so the churn cannot change the card's layout. */
-(function(){
-  var el = document.getElementById("sealName");
-  if (!el) return;
-  var G = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/<>=+";
-  var N = 11;
-  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  setInterval(function(){
-    if (document.hidden) return;
-    var s = "";
-    for (var i = 0; i < N; i++) s += G.charAt((Math.random()*G.length)|0);
-    el.textContent = s;
-  }, 110);
-})();
-</script>
-
-<script>
-/* ============ THE HORIZON PANEL ============
-   Clicking a waybar module to expand it is a real convention, so the
-   affordance needs no explaining. What it opens is three lines, not a
-   paragraph about vision: 2047 stays abstract until it is converted into
-   lived time, and a number a reader can feel does the work that rhetoric
-   cannot. The count is computed, never written down, so it can never be
-   stale or wrong. */
-(function(){
-  var panel = document.getElementById("hzPanel");
-  if (!panel) return;
-  var btn   = document.getElementById("hzBtn");
-  var btn2  = document.getElementById("hzBtn2");
-  var shut  = document.getElementById("hzClose");
-  var count = document.getElementById("hzCount");
-  var open = false, opener = null;
-
-  function mornings(){
-    var ms = new Date(2047, 7, 15).getTime() - Date.now();   /* 15 Aug 2047 */
-    return Math.max(0, Math.ceil(ms / 86400000));
-  }
-  function show(src){
-    if (count){
-      var n = mornings();
-      count.textContent = n.toLocaleString ? n.toLocaleString("en-IN") : String(n);
-    }
-    opener = src || null;
-    panel.hidden = false;
-    void panel.offsetWidth;
-    panel.classList.add("open");
-    open = true;
-    if (btn) btn.setAttribute("aria-expanded", "true");
-    if (shut) shut.focus();
-  }
-  function hide(){
-    if (!open) return;
-    open = false;
-    panel.classList.remove("open");
-    if (btn) btn.setAttribute("aria-expanded", "false");
-    setTimeout(function(){ if (!open) panel.hidden = true; }, 380);
-    if (opener && opener.focus) opener.focus();
-  }
-  function toggle(e){
-    e.preventDefault(); e.stopPropagation();
-    if (open) hide(); else show(e.currentTarget);
-  }
-  if (btn)  btn.addEventListener("click", toggle);
-  if (btn2) btn2.addEventListener("click", toggle);
-  if (shut) shut.addEventListener("click", hide);
-
-  addEventListener("keydown", function(e){ if (e.key === "Escape") hide(); });
-  addEventListener("click", function(e){
-    if (!open) return;
-    if (panel.contains(e.target)) return;
-    if (btn && btn.contains(e.target)) return;
-    if (btn2 && btn2.contains(e.target)) return;
-    hide();
-  }, true);
-})();
-</script>
 </body>
 </html>
