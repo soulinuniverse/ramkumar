@@ -302,7 +302,7 @@ pre.ascii-hi{
   100%{transform:none; opacity:1}
 }
 @media (prefers-reduced-motion:reduce){.wm-hi span,.wm-en span,.wm-tag span{animation:none}}
-.phase-tag{
+.phase-tag{display:none;
   position:absolute;right:0;bottom:-18px;z-index:4;
   font-family:var(--f-mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;
   color:var(--ink-3);
@@ -782,7 +782,6 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
               <div class="wm-en" id="wmEn"></div>
               <div class="wm-tag" id="wmTag"></div>
             </div>
-            <span class="phase-tag">phase <b id="phasename">boot</b></span>
           </div></div>
           <div class="fetch-rows" id="fetch"></div>
         </div>
