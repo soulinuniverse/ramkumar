@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ram Kumar · Founder, Cinema Perfumes</title>
-<meta name="description" content="Ram Kumar, Mumbai. Sixteen years in film, music rights and archives. Founder of Cinema Perfumes, a fragrance house for the people who make films.">
+<meta name="description" content="Ram Kumar, Mumbai. Sixteen years in media and entertainment, music rights and archives. Founder of Cinema Perfumes, a fragrance house for the people who make films.">
 <meta name="author" content="Ram Kumar">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ram Kumar · Founder, Cinema Perfumes">
@@ -750,7 +750,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
     <div class="shell hero">
       <div class="hero-grid">
         <div>
-          <p class="mono eyebrow"><b>●&nbsp;Mumbai</b> Sixteen years in film</p>
+          <p class="mono eyebrow"><b>●&nbsp;Mumbai</b> Sixteen years in media and entertainment</p>
           <p class="greeting"><span class="word" id="greetWord">नमस्ते</span><span class="lang" id="greetLang">Hindi</span></p>
           <p class="mono heroname">Ram Kumar &middot; Screen name: universe</p>
           <h1>
@@ -807,7 +807,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
         <div class="sec-head">
           <div>
             <p class="mono eyebrow"><b>What I&rsquo;ve done</b></p>
-            <h2>Sixteen years,<br>mostly behind the camera.</h2>
+            <h2>Sixteen years,<br>mostly behind the scenes.</h2>
           </div>
           <p class="prose">
             I have led design teams, edited features, shot campaigns, and filed the
@@ -1010,7 +1010,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
   document.getElementById("yr").textContent = new Date().getFullYear();
 
   /* ---- ticker ---- */
-  var items = ["Sixteen years in film","<b>Cinema Perfumes</b>","100+ songs filed with IPRS",
+  var items = ["Sixteen years in media and entertainment","<b>Cinema Perfumes</b>","100+ songs filed with IPRS",
     "<b>Credit where it is due</b>","Top, heart, base","Crew of 150+",
     "DPIIT-recognised startup","<b>Built in India</b>"];
   var track = document.getElementById("tick");
@@ -1362,7 +1362,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
 
   /* ---------- headline rotation, in step with the portrait ---------- */
   var VOICES = [
-    {eye:"Sixteen years in film",
+    {eye:"Sixteen years in media and entertainment",
      h:["Hi, I&rsquo;m Ram.","Sixteen years","behind the work."],
      s:"On film sets, in edit rooms, and lately in music rights and archives. Mostly making sure the people who made something get named for it."},
     {eye:"Cinema Perfumes",
@@ -1740,9 +1740,10 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
         var baseY = H*sc.hz + far*H*0.11;
         var amp   = H*(sc.kind==="peaks"?0.20:sc.kind==="trees"?0.13:sc.kind==="city"?0.16:0.095)*(0.45+far*0.75);
 
-        x.beginPath(); x.moveTo(0,H);
+        /* height of the ridge at every sample, computed once */
+        var ys = new Float32Array(n);
         for (var i=0;i<n;i++){
-          var px = i/(n-1)*wide, py;
+          var py;
           if (sc.kind==="waves"){
             py = baseY - Math.sin(i*0.22 + L*1.7)*amp*0.75 - Math.sin(i*0.07+L)*amp*0.5;
           } else if (sc.kind==="city"){
@@ -1753,8 +1754,16 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
             py = baseY - (pts[i]-0.5)*amp*2;
           }
           if (sc.kind==="trees" && i%2) py -= amp*0.35;                  /* spiky treeline */
-          x.lineTo(px,py);
+          ys[i] = py;
         }
+        /* The tile is drawn twice side by side so the hills can drift forever.
+           For that to look like one unbroken ridge the last point must meet the
+           first, so the difference is spread gently along the whole length. */
+        var seam = ys[0] - ys[n-1];
+        for (var k2=0;k2<n;k2++){ var u = k2/(n-1); ys[k2] += seam*u*u*(3-2*u); }
+
+        x.beginPath(); x.moveTo(0,H);
+        for (var i2=0;i2<n;i2++) x.lineTo(i2/(n-1)*wide, ys[i2]);
         x.lineTo(wide,H); x.closePath();
 
         /* atmospheric perspective: distant layers wash toward the sky */
@@ -1762,17 +1771,11 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
         x.fillStyle = fill; x.fill();
 
         if (L === N-1){                       /* rim light on the nearest ridge only */
-          x.strokeStyle = rgba(sig, 0.42); x.lineWidth = 1.2;
+          x.strokeStyle = rgba(sig, 0.42); x.lineWidth = 1.2; x.lineJoin = "round";
           x.beginPath();
-          for (var j=0;j<n;j++){
-            var qx=j/(n-1)*wide, qy;
-            if (sc.kind==="waves") qy = baseY - Math.sin(j*0.22 + L*1.7)*amp*0.75 - Math.sin(j*0.07+L)*amp*0.5;
-            else if (sc.kind==="city") qy = baseY - (Math.round(pts[(j>>3)<<3]*7)/7 - 0.5)*amp*2;
-            else if (sc.kind==="fog") qy = baseY - Math.sin(j*0.05+L*2.1)*amp*0.35;
-            else qy = baseY - (pts[j]-0.5)*amp*2;
-            if (sc.kind==="trees" && j%2) qy -= amp*0.35;
-            j ? x.lineTo(qx,qy) : x.moveTo(qx,qy);
-          }
+          x.moveTo(-3, ys[0]);
+          for (var j=0;j<n;j++) x.lineTo(j/(n-1)*wide, ys[j]);
+          x.lineTo(wide+3, ys[n-1]);
           x.stroke();
         }
         layers.push({ c:c, w:wide, drift:(0.10+far*0.55)*(L%2?1:-1), par:0.02+ (1-far)*0.10, alpha:0.94 });
@@ -1938,7 +1941,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
         var oy = sy * ly.par;
         lx.globalAlpha = ly.alpha;
         lx.drawImage(ly.c, ox, -oy, ly.w, H);
-        lx.drawImage(ly.c, ox+ly.w, -oy, ly.w, H);
+        lx.drawImage(ly.c, ox+ly.w-1, -oy, ly.w, H);
       }
       lx.globalAlpha = 1;
       drawOrn(cur, now);
@@ -1999,7 +2002,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink-3)}
     {k:"Company",     v:"Born For Cinema OPC Pvt Ltd"},
     {k:"Recognition", v:"DPIIT-recognised startup"},
     {g:"record"},
-    {k:"Film",        v:"16 years, sets and edit rooms"},
+    {k:"Experience",  v:"16 years in media and entertainment"},
     {k:"Biggest crew",v:"150+, Nastik"},
     {k:"Music rights",v:"100+ songs filed with IPRS"},
     {g:"contact"},
